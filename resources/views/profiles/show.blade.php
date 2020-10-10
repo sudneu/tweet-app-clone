@@ -1,4 +1,4 @@
-<x-app>
+<x-app style="min-width:650px;">
     <header class="mb-6">
         <div class="relative">
             <img

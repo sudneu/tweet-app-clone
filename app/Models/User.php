@@ -14,6 +14,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable, Followable;
 
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
@@ -32,36 +33,7 @@ class User extends Authenticatable
     {
         return "https://i.private.cc/40?u=". $this->email;
     }
-
-    public function follow(User $user){
-        return $this->follows()->save($user);
-    }
-
-    public function unfollow(User $user){
-        return $this->follows()->detach($user);
-    }
-
-    public function follows()
-    {
-        return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
-    }
-
-    public function following(User $user)
-    {
-        return $this->follows()
-                ->where('following_user_id', $user->id)
-                ->exists();
-    }
-
-    public function toggleFollow(User $user)
-    {
-        if($this->following($user)){
-            return $this->unfollow($user);
-        }
-
-        return $this->follow($user);
-    }
-
+    
     public function timeline()
     {
         //include all of the user's tweets
@@ -82,7 +54,7 @@ class User extends Authenticatable
 
     public function path($append="")
     {
-        $path = route('profile', $this->name);
+        $path = route('profile', $this->username);
 
         return $append ? "{$path}/{$append}" : $path;
     }

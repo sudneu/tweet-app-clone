@@ -1,5 +1,5 @@
 <x-app>
-    <div>
+    <div style="min-width:650px">
         @include('_publish-panel')
                         
         @include('_timeline')

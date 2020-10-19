@@ -9,7 +9,7 @@
     <li>
         <a 
             class="font-bold text-lg mr-4"
-            href="/"
+            href="{{route('explore')}}"
         >Explore
         </a>
     </li>

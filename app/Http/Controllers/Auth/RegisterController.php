@@ -71,5 +71,7 @@ class RegisterController extends Controller
         $data = $request->except('_token','password_confirmation');
         $data['password'] = bcrypt($data['password']);
         return User::create($data);
+
+        return redirect($user->path());
     }
 }

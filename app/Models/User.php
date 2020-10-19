@@ -16,6 +16,7 @@ class User extends Authenticatable
     protected $fillable = [
         'username',
         'name',
+        'avatar',
         'email',
         'password',
     ];
@@ -29,10 +30,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        return "https://i.private.cc/40?u=". $this->email;
+        return asset($value ?? '/images/avatar.jpg');
     }
+
+    public function getPasswordAttribute($value)
+    {
+        return $this->attributes['password'] = bcrypt($value);
+    }    
     
     public function timeline()
     {

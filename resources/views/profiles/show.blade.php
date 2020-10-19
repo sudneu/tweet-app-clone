@@ -7,10 +7,11 @@
                 class="rounded-lg"
             />
             <img
-                src="/images/avatar.jpg"
+                src="{{$user->avatar}}"
                 alt="profile-picture"
                 class="absolute rounded-full mr-2 bottom-0 transform -translate-x-1/2 translate-y-1/2"
                 style="left:50%;width: 150px;"
+                
             />
         </div>
 

@@ -7,7 +7,7 @@
         </li>
         <li><a
                 href=""
-            >Classes</a>
+            >Games</a>
         </li>
         <li><a
                 href=""

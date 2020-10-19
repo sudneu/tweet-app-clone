@@ -1,5 +1,5 @@
 @unless(auth()->user()->is($user))
-    <form method="post" action="/profiles/{{ $user->name }}/follow">
+    <form method="post" action="{{route('follow', $user->username)}}">
         @csrf
         <button type="submit" 
                 class="bg-green-500 rounded-full 

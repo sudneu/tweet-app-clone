@@ -1,14 +1,14 @@
-<div class="border border-green-700 rounded-lg py-3 mb-8">
+<div class="border border-green-700 rounded-lg mb-8">
     <form method="post" action="/tweets">
     @csrf
         <textarea
             name="body"
-            class="w-full px-4"
+            class="w-full px-4 py-3"
             placeholder = "What're you thinking?"
         ></textarea>
         <hr class="my-2">
 
-        <footer class="flex justify-between px-4">
+        <footer class="flex justify-between px-4 py-3">
             <img
                 style="height:40px; width:40px;"
                 src="/images/logo.png"
